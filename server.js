@@ -62,6 +62,7 @@ function startPrompt() {
 
 function viewDepartments() {
   db.query(`SELECT * FROM department;`, (err, data) => {
+    if (err) throw err;
     console.table(data);
     startPrompt();
   });
@@ -69,6 +70,7 @@ function viewDepartments() {
 
 function viewRoles() {
   db.query(`SELECT * FROM role;`, (err, data) => {
+    if (err) throw err;
     console.table(data);
     startPrompt();
   });
@@ -76,6 +78,7 @@ function viewRoles() {
 
 function viewEmployees() {
   db.query(`SELECT * FROM employee;`, (err, data) => {
+    if (err) throw err;
     console.table(data);
     startPrompt();
   });
